@@ -1,4 +1,4 @@
-﻿//->解决click的300ms延迟
+//->解决click的300ms延迟
 FastClick.attach(document.body);
 
 //->动态计算REM的值
@@ -23,8 +23,15 @@ function changeEnd(swiper) {
         slideAry = swiper.slides;//->获取当前所有的活动块(获取的结果是一个数组)
     [].forEach.call(slideAry, function (slide, index) {
         if (n === index) {
-            // slide.id = (n == 1 || n == 6) ? "page1" : "page5";
-            slide.id = "page"+n
+           // slide.id = (n == 1 || n == 3) ? "page1" : "page2";
+            if(n==6){
+                slide.id ="page1"
+            }else if(n==0){
+                slide.id ="page5"
+            }else{
+                slide.id ="page"+n
+            }
+
             return;
         }
         slide.id = null;
